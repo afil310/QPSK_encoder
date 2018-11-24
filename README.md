@@ -4,6 +4,7 @@
 
 ## Description
 QPSK encoder with <a href="https://en.wikipedia.org/wiki/Root-raised-cosine_filter">Root-raised-cosine filter</a> reads data from `stdin` and prints encoded data to `stdout`. 
+
 <a href="https://en.wikipedia.org/wiki/Phase-shift_keying#Quadrature_phase-shift_keying_(QPSK)">Quadrature Phase Shift Keying</a> is used for the input data encoding.
 
 Output data format: `<sample number, I, Q>`, where `I(t)` and `Q(t)` are the modulating signals.
@@ -28,9 +29,9 @@ Benchmark: False
 
 - `Beta` - β, or the roll-off factor - the parameter for Root-raised-cosine filter.
 
-- `ReadBufferSize` - the buffer size for data reading from stdin or file.
+- `ReadBufferSize` - the buffer size for data reading from `stdin` or file.
 
-- `CsvRounding` - the number of decimal places for I and Q rounding.
+- `CsvRounding` - the number of decimal places for `I` and `Q` parameters rounding.
 - `Benchmark`: 
 	- `Benchmark: False` - the encoding mode is on.
 	- `Benchmark: True`  - the benchmark mode is on. The input data from `stdin` is encoded, but only the encoding speed (bit/s) is printed to `stdout`.
@@ -54,9 +55,9 @@ prints '1' to `stdout`, and
 ```bash
 | python3 qpsk_encoder.py
 ```
-reads '1' from `stdin` and encodes it into 32 samples, as there are 8 bits in '1' character and each bit is encoded into 4 samples as `SymbolWidth` parameter is set to 4. 
+reads '1' from `stdin` and encodes it into 32 samples, as there are 8 bits in the input '1' character and each input bit is encoded into 4 samples as `SymbolWidth` parameter is set to 4. 
 <details> 
-<summary>The resulting output in `stdout` : </summary><p>
+<summary>The resulting output in `stdout` :</summary><p>
 
 ```bash
 1,-0.046,-0.046
